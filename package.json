@@ -1,0 +1,10 @@
+{
+  "name": "salesflow",
+  "version": "1.0.0",
+  "description": "Sistema web de gestão comercial (clientes, produtos e vendas) em JavaScript puro.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
