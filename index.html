@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SalesFlow · Gestão comercial</title>
+    <meta name="description" content="SalesFlow: sistema web de gestão comercial com clientes, produtos, vendas e dashboard. Projeto de portfólio em JavaScript puro." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SalesFlow · Gestão comercial" />
+    <meta property="og:description" content="Sistema web de gestão comercial com clientes, produtos, vendas e dashboard. Projeto de portfólio em JavaScript puro." />
+    <meta property="og:url" content="https://ruangdev0-ux.github.io/salesflow/" />
+    <meta property="og:image" content="https://ruangdev0-ux.github.io/salesflow/assets/preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+    <div class="app">
+      <aside class="sidebar">
+        <a class="brand" href="#/dashboard" aria-label="SalesFlow — ir para o Dashboard">
+          <svg class="brand-mark" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
+            <rect width="32" height="32" rx="8" fill="currentColor" />
+            <path d="M8 21l6-6 4 4 7-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span class="brand-name">SalesFlow</span>
+        </a>
+        <nav id="nav" class="nav" aria-label="Navegação principal"></nav>
+        <p class="sidebar-note">Projeto de portfólio · dados fictícios</p>
+      </aside>
+
+      <div class="content">
+        <p id="storage-warning" class="banner banner-warning" role="alert" hidden>
+          O armazenamento do navegador está indisponível. O sistema funciona, mas os dados serão perdidos ao fechar ou recarregar a página.
+        </p>
+        <main id="main" class="main" tabindex="-1"></main>
+      </div>
+    </div>
+
+    <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
+    <noscript>
+      <p class="banner banner-warning">O SalesFlow precisa de JavaScript habilitado para funcionar.</p>
+    </noscript>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
