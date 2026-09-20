@@ -1,0 +1,845 @@
+/* ==========================================================================
+   components.css — botões, cartões, tabelas, formulários, janelas, etiquetas...
+   ========================================================================== */
+
+/* ----- Botões ----- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--brand-dark);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--danger-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: #eef2f7;
+  color: var(--text);
+}
+
+.btn-danger-text {
+  color: var(--danger);
+}
+
+.btn-ghost.btn-danger-text:hover:not(:disabled) {
+  background: var(--danger-soft);
+  color: var(--danger-dark);
+}
+
+.btn-icon {
+  min-height: 36px;
+  width: 36px;
+  padding: 0;
+}
+
+.btn-sm {
+  min-height: 34px;
+  padding: 5px 12px;
+  font-size: 0.88rem;
+}
+
+.icon {
+  flex: none;
+}
+
+/* ----- Cartões ----- */
+.card {
+  margin-bottom: 16px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.grid-2 > .card {
+  margin-bottom: 0;
+}
+
+.card-title {
+  margin-bottom: 2px;
+}
+
+.card-title-spaced {
+  margin-top: 22px;
+  margin-bottom: 8px;
+}
+
+.card-note {
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.card-link {
+  margin-top: 12px;
+  font-size: 0.9rem;
+}
+
+/* ----- Indicadores (KPIs) ----- */
+.kpi {
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.kpi-primary {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+.kpi-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.kpi-value {
+  margin: 4px 0;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.kpi-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.kpi-primary .kpi-label,
+.kpi-primary .kpi-note {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ----- Barra de ferramentas (busca e filtros) ----- */
+.toolbar {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.toolbar .field {
+  margin-bottom: 0;
+}
+
+.toolbar-wrap {
+  flex-wrap: wrap;
+}
+
+.field-grow {
+  flex: 1 1 200px;
+}
+
+.field-date {
+  flex: 0 0 150px;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon .icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.input-icon input {
+  padding-left: 38px;
+}
+
+.result-count {
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.result-count strong {
+  color: var(--text);
+}
+
+/* ----- Tabelas ----- */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 12px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.table .actions-col {
+  width: 1%;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.table-compact td,
+.table-compact th {
+  padding: 8px 10px;
+}
+
+.cell-sub {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* ----- Etiquetas de status ----- */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.badge-pending,
+.badge-low {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.badge-paid {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.badge-cancelled,
+.badge-out {
+  background: var(--danger-soft);
+  color: var(--danger-dark);
+}
+
+/* ----- Estado vazio ----- */
+.empty-state {
+  padding: 36px 16px;
+  text-align: center;
+}
+
+.empty-title {
+  font-weight: 600;
+}
+
+.empty-text {
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+/* ----- Formulários ----- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.field label {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.req {
+  color: var(--danger);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--brand);
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 0;
+}
+
+[aria-invalid='true'] {
+  border-color: var(--danger);
+}
+
+.field-hint {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.field-error {
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--danger);
+}
+
+.form-error {
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  color: var(--danger-dark);
+  background: var(--danger-soft);
+  border-radius: var(--radius-sm);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 12px;
+}
+
+/* ----- Itens da venda (formulário de nova venda) ----- */
+.lines {
+  margin: 0 0 14px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #f8fafc;
+}
+
+.lines legend {
+  padding: 0 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.sale-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 84px 100px 36px;
+  gap: 8px;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.sale-line .field {
+  margin-bottom: 0;
+}
+
+.line-subtotal {
+  align-self: center;
+  text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.line-error {
+  grid-column: 1 / -1;
+  margin-top: -4px;
+}
+
+.sale-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding: 12px 14px;
+  font-weight: 600;
+  background: var(--brand-soft);
+  border-radius: var(--radius-sm);
+}
+
+.sale-total strong {
+  font-size: 1.15rem;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 0 0 16px;
+}
+
+.details dt {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.details dd {
+  margin: 2px 0 0;
+}
+
+/* ----- Janelas (modal) ----- */
+dialog.modal {
+  width: min(520px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+  padding: 0;
+  overflow: hidden;
+  color: var(--text);
+  background: var(--surface);
+  border: 0;
+  border-radius: 14px;
+  box-shadow: var(--shadow-lg);
+}
+
+dialog.modal-lg {
+  width: min(780px, calc(100vw - 24px));
+}
+
+dialog.modal::backdrop {
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 24px);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 20px;
+  background: #f8fafc;
+  border-top: 1px solid var(--border);
+}
+
+.confirm-text {
+  line-height: 1.55;
+}
+
+/* ----- Avisos (toasts e banners) ----- */
+.toasts {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(380px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.toast {
+  padding: 12px 14px;
+  font-weight: 500;
+  color: #fff;
+  background: #1e293b;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  animation: toast-in 0.2s ease-out;
+}
+
+.toast-success {
+  background: #15803d;
+}
+
+.toast-error {
+  background: var(--danger);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.banner {
+  margin: 0;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+
+.banner-warning {
+  color: var(--warning);
+  background: var(--warning-soft);
+}
+
+/* ----- Dashboard: gráficos simples com HTML/CSS ----- */
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 220px;
+}
+
+.bar-col {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.bar-value {
+  min-height: 1.1em;
+  font-size: 0.72rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.bar-track {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.bar {
+  width: min(46px, 70%);
+  min-height: 0;
+  background: var(--brand);
+  border-radius: 6px 6px 0 0;
+}
+
+.bar-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--muted);
+}
+
+.status-list,
+.simple-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.status-list li {
+  margin-bottom: 14px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.progress {
+  height: 8px;
+  overflow: hidden;
+  background: #eef2f7;
+  border-radius: 999px;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.progress-paid {
+  background: #16a34a;
+}
+
+.progress-pending {
+  background: #d97706;
+}
+
+.progress-cancelled {
+  background: #dc2626;
+}
+
+.simple-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.simple-list li:last-child {
+  border-bottom: 0;
+}
+
+.list-end {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.data-panel .card-note {
+  margin-bottom: 0;
+  max-width: 560px;
+}
+
+.data-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ----- Celular: tabelas viram "cartões" e formulários ficam em coluna ----- */
+@media (max-width: 720px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* evita o zoom automático do iOS ao focar um campo */
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar .field-grow {
+    flex: 0 0 auto;
+  }
+
+  /* Filtros de vendas: busca e status em linha inteira, datas lado a lado. */
+  .toolbar-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .toolbar-wrap .field-grow,
+  .toolbar-wrap .field-full,
+  .toolbar-wrap .btn {
+    grid-column: 1 / -1;
+  }
+
+  .toolbar .btn {
+    justify-self: start;
+  }
+
+  .field-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Tabela -> lista de cartões. O rótulo de cada célula vem do atributo data-label. */
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+  }
+
+  .table tr {
+    margin-bottom: 12px;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 0;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .table td:last-child {
+    border-bottom: 0;
+  }
+
+  .table td > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .table td[data-label]::before {
+    content: attr(data-label);
+    flex: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-align: left;
+  }
+
+  .table .actions-col {
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .table tbody tr:hover {
+    background: transparent;
+  }
+
+  /* Cada item vira 2 linhas: produto (largura toda) e depois quantidade, subtotal e remover. */
+  .sale-line {
+    grid-template-columns: 76px minmax(0, 1fr) 36px;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sale-line > .field:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .line-subtotal {
+    text-align: right;
+  }
+
+  .kpi-value {
+    font-size: 1.3rem;
+  }
+
+  .toasts {
+    right: 12px;
+    bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+
+  dialog.modal {
+    width: calc(100vw - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+
+  .modal form {
+    max-height: calc(100dvh - 16px);
+  }
+
+  .modal-footer .btn {
+    flex: 1 1 auto;
+  }
+
+  .bar-chart {
+    gap: 4px;
+  }
+
+  .bar-value {
+    font-size: 0.62rem;
+  }
+}
